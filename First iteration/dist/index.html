@@ -4,13 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perlin Noise X Vertex Shader</title>
+    <title>Lavi Play</title>
     <style>body {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+#controls {
+  background: #ffffffe6;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  box-shadow: 0 4px 10px #0000004d;
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+}
+
+input, textarea, button {
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 10px 15px;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 </style>
 </head>
 <body>
+    <div id="controls">
+        <label for="color">Disco Ball Color:</label>
+        <input type="color" id="color" value="#ff0000">
+
+        <label for="color">Background Color:</label>
+        <input type="color" id="bg_color" value="#000000">
+
+        <label for="intensity">Intensity (100-300):</label>
+        <input type="range" id="intensity" min="100" max="300" value="200">
+
+        <label for="emojis">Emojis (comma-separated):</label>
+        <textarea id="emojis" rows="3">😀,😂,😎</textarea>
+
+        <button id="startButton">Start</button>
+    </div>
     <script id="vertexshader" type="vertex">
       uniform float u_time;
 
